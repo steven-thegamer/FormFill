@@ -1,0 +1,111 @@
+{
+  "_version": "1.81.0",
+  "sap.app": {
+    "id": "tutorialfiori",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.20.1",
+      "toolsId": "d430642f-9c17-40a8-a7a7-5667b0a051e3"
+    },
+    "crossNavigation": {
+      "inbounds": {
+        "tutorial-fiori": {
+          "semanticObject": "tutorial",
+          "action": "fiori",
+          "title": "{{tutorial-fiori.flpTitle}}",
+          "signature": {
+            "parameters": {},
+            "additionalParameters": "allowed"
+          }
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.146.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "tutorialfiori.i18n.i18n"
+        }
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "transition": "slide",
+        "type": "View",
+        "viewType": "XML",
+        "path": "tutorialfiori.view",
+        "async": true,
+        "viewPath": "tutorialfiori.view"
+      },
+      "routes": [
+        {
+          "name": "Routemain",
+          "pattern": ":?query:",
+          "target": [
+            "Targetmain"
+          ]
+        }
+      ],
+      "targets": {
+        "Targetmain": {
+          "id": "main",
+          "name": "main"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "tutorialfiori.view.App",
+      "type": "XML",
+      "id": "App",
+      "async": true
+    }
+  }
+}
